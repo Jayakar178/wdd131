@@ -1,62 +1,78 @@
-body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-    text-align: center;
 
-}  
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.dark {
+  background-color: #333;
+  color: white;
+}
+
+.dark h2 {
+  color: rgb(160, 212, 237); 
+}
+
 
 header {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 header h1 {
-            font-size: 36px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
-header h2{
-    font-size: 18px;
-    color: #006eb6;
-    margin: 10px 0;
-    letter-spacing: 2px;
-
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-    width: 50%;
-    margin-left: auto; 
-    margin-right: auto;
+header h2 {
+  font-size: 18px;
+  color: #006eb6;
+  margin: 10px auto;
+  letter-spacing: 2px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  width: 50%;
 }
+
 
 main {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 10px;
+}
+
+main p {
+  margin-bottom: 15px;
+}
+
+main ol {
+  padding-left: 20px;
+}
+
+main ol li {
+  margin-bottom: 10px;
 }
 
 
-main p {
-    margin-bottom: 15px;
-  }
-main ol {
-    padding-left: 20px;
-  }
+#logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
 
-main ol li {
-    margin-bottom: 10px;
-  } 
 
- 
-
-  #logo {
-    width: 120px; 
-    height: auto; 
-    display: block;
-    margin: 20px auto; 
-    margin-left: 660px;
-  }
+#theme-selector {
+  margin: 10px auto;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+}
