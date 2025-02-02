@@ -3,7 +3,6 @@
 :root {
   --primary-color: #52489c; /* Purple */
   --secondary-color: #59c3c3; /* Teal */
-  --accent-color: #ffffff; /* Coral */
   --text-light: #ffffff;
   --text-dark: #333;
   --primary-font: Arial, Helvetica, sans-serif;
@@ -30,7 +29,7 @@ header h1 {
   font-size: 1.5rem;
 }
 
-.menu {
+.menu-button {
   background: none;
   border: none;
   color: var(--text-light);
@@ -44,6 +43,11 @@ nav ul {
   padding: 0;
   margin: 0;
   text-align: center;
+}
+
+/* Hide menu items by default on small screens */
+.hide {
+  display: none;
 }
 
 nav ul li {
@@ -62,16 +66,12 @@ main {
 }
 
 main h2 {
-
-  
-    font-family: 'Mooli', sans-serif; /* Clean sans-serif font */
-    font-weight: bold; /* Bold text */
-    font-size: 1.8rem; /* Adjust size as needed */
-    color: #333; /* Dark gray color for the font */
-    margin-bottom: 1rem; /* Space below heading */
-    text-align: center; /* Center the text */
-  
-  
+  font-family: 'Mooli', sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .gallery {
@@ -89,14 +89,10 @@ figure {
 figure img {
   max-width: 100%;
   height: auto;
-  
-  
-    border: 4px solid #ffffff; /* White border */
-    border-radius: 5px; /* Optional for rounded corners */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    object-fit: cover; /* Ensures proper image cropping */
-  
-  
+  border: 4px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
 }
 
 /* Footer */
@@ -110,23 +106,18 @@ footer {
 
 /* Medium Screen Styles */
 @media (min-width: 700px) {
-  nav ul {
-    display: none; /* Hide navigation links */
+  .menu-button {
+    display: none; /* Hide menu button on larger screens */
   }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Display images in 2 columns */
+  .menu {
+    display: flex !important; /* Always show menu on larger screens */
+    justify-content: center;
+    gap: 15px;
   }
 }
 
 /* Large Screen Styles */
 @media (min-width: 1000px) {
-  nav ul {
-    display: flex; /* Show navigation links */
-    justify-content: center;
-    gap: 15px;
-  }
-
   .gallery {
     grid-template-columns: repeat(3, 1fr); /* Display images in 3 columns */
   }

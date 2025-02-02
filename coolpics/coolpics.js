@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.getElementById('menu');
-    const nav = document.querySelector('nav');
+document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.querySelector(".menu-button"); // Select menu button
+    const menu = document.querySelector(".menu"); // Select menu (ul)
 
-    menu.addEventListener('click', () => {
-        nav.classList.toggle('show-nav');
+    menuButton.addEventListener("click", () => {
+        menu.classList.toggle("hide"); // Toggle menu visibility
     });
 });
