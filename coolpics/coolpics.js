@@ -1,24 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.querySelector(".menu-button"); // Select menu button
-    const menu = document.querySelector(".menu"); // Select menu (ul)
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.add("hide");
 
-    // Toggle menu visibility when menu button is clicked
     menuButton.addEventListener("click", () => {
-        menu.classList.toggle("hide");
+        navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
     });
 
-    // Handle window resize event to reset menu visibility
-    function handleResize() {
-        if (window.innerWidth > 1000) {
-            menu.classList.remove("hide"); // Ensure menu is visible on large screens
-        } else {
-            menu.classList.add("hide"); // Hide menu if screen is small
-        }
+function handleResize() {
+    if (window.innerWidth > 1000) {
+        navLinks.classList.remove("hide"); 
+    } else {
+        navLinks.classList.add("hide"); 
     }
+}
 
-    // Run handleResize immediately when page loads
     handleResize();
-
-    // Add event listener for window resizing
     window.addEventListener("resize", handleResize);
 });
+
+function viewerTemplate(pic, alt) {
+    return `<div class="viewer">
+            <button class="close-viewer">X</button>
+            <img src="${pic}" alt="${alt}">
+          </div>`;
+}
+
+function viewHandler(event) {
+    if (event.target.tagName === "IMG") {
+        let imgSrc = event.target.src.replace("norris-sm.jpeg", "norris-full.jpeg");
+        const imgAlt = event.target.alt;
+
+        document.body.insertAdjacentHTML("afterbegin", viewerTemplate(imgSrc, imgAlt));
+
+        document.querySelector(".close-viewer").addEventListener("click", closeViewer);
+    }
+}
+
+function closeViewer() {
+    document.querySelector(".viewer").remove();
+}
+
+document.querySelector(".gallery").addEventListener("click", viewHandler);

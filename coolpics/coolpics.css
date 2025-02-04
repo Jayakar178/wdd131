@@ -1,124 +1,155 @@
 @import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
 
 :root {
-  --primary-color: #52489c; /* Purple */
-  --secondary-color: #59c3c3; /* Teal */
-  --text-light: #ffffff;
-  --text-dark: #333;
-  --primary-font: Arial, Helvetica, sans-serif;
-  --secondary-font: 'Mooli', sans-serif;
+    --primary-color: #1e00ff;
+    --secondary-color: #000000;
+    --accent-color: #00ff4c;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: Mooli, sans-serif;
 }
 
-/* Base Styles */
 body {
-  font-family: var(--primary-font);
-  margin: 0;
-  padding: 0;
-  color: var(--text-dark);
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-family: var(--secondary-font);
 }
 
 header {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  text-align: center;
-  padding: 1rem;
-}
-
-header h1 {
-  font-family: var(--secondary-font);
-  font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: center;
+    position: relative;
 }
 
 .menu-button {
-  background: none;
-  border: none;
-  color: var(--text-light);
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: var(--text-light);
+    font-family: var(--primary-font);
+    cursor: pointer;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+.menu-button:focus {
+    outline: none;
 }
 
-/* Hide menu items by default on small screens */
-.hide {
-  display: none;
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
 }
 
-nav ul li {
-  margin: 0.5rem 0;
-}
-
-nav ul a {
-  color: var(--text-light);
-  text-decoration: none;
-}
-
-/* Main Content */
 main {
-  padding: 1rem;
-  text-align: center;
-}
-
-main h2 {
-  font-family: 'Mooli', sans-serif;
-  font-weight: bold;
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 1rem;
-  text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 figure {
-  margin: 0 auto;
-  width: 80%;
+    margin: 0;
+    padding: 0;
 }
 
-figure img {
-  max-width: 100%;
-  height: auto;
-  border: 4px solid #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
+img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Footer */
-footer {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 0.8rem;
+img:hover {
+    transform:scale(1.05);
 }
 
-/* Medium Screen Styles */
-@media (min-width: 700px) {
-  .menu-button {
-    display: none; /* Hide menu button on larger screens */
-  }
-  .menu {
-    display: flex !important; /* Always show menu on larger screens */
+@media screen and (min-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 15px;
-  }
+    z-index: 10;
+    padding: 20px;
 }
 
-/* Large Screen Styles */
-@media (min-width: 1000px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr); /* Display images in 3 columns */
-  }
+.viewer img {
+    width: auto;
+    height: auto;
+    max-width: 99%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-viewer {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: red;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    z-index: 20;
 }
