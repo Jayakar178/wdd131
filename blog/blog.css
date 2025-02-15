@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Helvetica, Arial, sans-serif;
     background-color: #fff;
@@ -6,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Header Styles */
 header {
     text-align: center;
     padding: 20px;
@@ -26,6 +28,7 @@ nav a {
     color: #AF1B3F;
 }
 
+/* Main Content */
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -35,38 +38,62 @@ main {
     margin: auto;
 }
 
+/* Content Container */
 .content-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px; /* Add space between articles */
 }
 
+/* Book Review Layout */
 .book-review {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
     border-bottom: 2px solid #EFC69B;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px; /* Add space between articles */
     position: relative;
 }
 
+/* Book Details - Left Column */
 .book-details {
-    text-align: right;
+    text-align: right; /* Align details to the right */
+    border-right: 2px solid #ccc; /* Add right border */
+    padding-right: 15px;
+    padding-left: 10px;
+    line-height: 1.3; /* Reduce space between lines */
 }
 
+/* Increase Font Size for Date */
+.book-details .date {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Book Content - Right Column */
+.book-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Align Title with Date */
+.book-content h2 {
+    color: #AF1B3F;
+    margin-top: 0; /* Aligns title with date */
+}
+
+/* Center Book Cover */
 .book-content img {
     max-width: 150px;
     display: block;
+    margin: 0 auto; /* Center Image */
 }
 
-.book-content h2 {
-    color: #AF1B3F;
-}
-
+/* Filters Sidebar */
 .filters {
     border: 1px solid #ccc;
     padding: 15px;
     background-color: #f9f9f9;
 }
-
