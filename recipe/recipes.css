@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC";
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    background-color: #f8f8f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+}
+
+.logo {
+    height: 60px;
+}
+
+header h1 {
+    font-family: var(--secondary-font);
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background: var(--secondary-color);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* RECIPES */
+.recipe {
+    max-width: 400px;
+    background: white;
+    padding: 15px;
+    margin: 20px auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.recipe img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.recipe-info {
+    padding: 10px;
+}
+
+.tag {
+    background: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.rating {
+    color: #f4c542;
+    font-size: 1.2rem;
+}
+
+/* FOOTER */
+/* FOOTER */
+footer {
+    background: #222;
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+
+/* RESPONSIVE */
+@media (min-width: 600px) {
+    .description {
+        display: block;
+    }
+
+    .header-container {
+        max-width: 1000px;
+    }
+}
