@@ -48,10 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Display initial recipes
     displayRecipes(recipes);
 
-    // Search functionality
     const searchInput = document.getElementById("searchInput");
     searchInput.addEventListener("input", function(event) {
         const searchTerm = event.target.value.toLowerCase();
