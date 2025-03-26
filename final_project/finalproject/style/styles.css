@@ -97,18 +97,17 @@ input[type="checkbox"] {
 }
 
 .about {
-    padding: 2rem;
+  padding: 2rem 1.5rem;
     background-color: #fff8dc;
     font-size: 1rem;
     line-height: 1.6;
     box-shadow: inset 0 1px 0 #ddd;
-    margin-bottom: 0; 
 }
 
 .about h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-}
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+  }
 
 footer {
   text-align: center;
@@ -122,6 +121,7 @@ footer {
 
 
 
+/* Reset & layout control */
 html, body {
     height: 100%;
     margin: 0;
@@ -131,13 +131,19 @@ html, body {
   body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
   
-  main {
-    flex: 1;
-  }
+  /* Stretch main content to fill available space */
   
-  footer {
-    margin-top: auto;
-  }
+    main {
+        flex: 1;
+        background-color: #fff8dc; /* same as .about to fill gap */
+      }
+      
+  
+  
+  
+  
+  
   
