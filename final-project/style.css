@@ -1,0 +1,258 @@
+/* Base Page Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 1rem 0.8rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+header nav a {
+  color: #f8f8f8;
+  text-decoration: none;
+  font-size: 1.05rem;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+header nav a:hover::after,
+header nav a:focus::after {
+  width: 100%;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: #ffd700;
+  outline: none;
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-bottom: 100px;
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  background: linear-gradient(to right, #1e1e1e, #000);
+  color: #ccc;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-top: 3px solid #ffd700;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Buttons */
+button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background: #0056b3;
+  outline: 2px dashed #0056b3;
+  outline-offset: 4px;
+  transform: scale(1.03);
+}
+
+/* Image Effects: fade-in and zoom on hover */
+.main-image,
+.section-image,
+.philosopher-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.8s ease;
+  animation: fadeIn 1s forwards;
+}
+
+.section-image {
+  max-width: 80%;
+  border-radius: 5px;
+}
+
+.philosopher-image {
+  max-width: 200px;
+  border-radius: 6px;
+}
+
+.main-image:hover,
+.section-image:hover,
+.philosopher-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ✨ Glow only for Featured Philosopher images */
+#featuredPhilosophers .section-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Blockquotes */
+blockquote {
+  font-style: italic;
+  background: #f0f0f0;
+  padding: 15px;
+  border-left: 4px solid #007BFF;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+/* Philosopher Card for Search Result */
+.philosopher-card {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.philosopher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px rgba(0, 123, 255, 0.3);
+}
+
+.philosopher-teaching {
+  font-style: italic;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.philosopher-bio {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 10px;
+}
+
+/* Scroll Reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  padding: 10px 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  display: none;
+  transition: background 0.3s ease;
+}
+#backToTop:hover {
+  background-color: #0056b3;
+}
+
+/* Quote Rotator Section */
+.quote-carousel {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1rem;
+  background: #f9f9f9;
+  padding: 20px;
+  margin-top: 30px;
+  border-left: 4px solid #007BFF;
+  border-radius: 5px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+}
