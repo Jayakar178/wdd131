@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       section.classList.add("scroll-reveal");
       section.innerHTML = `
         <h3>${phil.name}</h3>
-        <img src="${phil.image}" alt="${phil.name}" class="section-image" width="300" height="350" loading="lazy">
+        <img src="${phil.image}" alt="Portrait of the Greek philosopher ${phil.name}" class="section-image" width="300" height="350" loading="lazy">
         <p><em>"${phil.teaching}"</em></p>
       `;
       featuredContainer.appendChild(section);
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const card = document.createElement("div");
       card.classList.add("philosopher-card", "scroll-reveal");
       card.innerHTML = `
-        <img src="${phil.image}" alt="${phil.name}" class="philosopher-image" width="200" height="250" loading="lazy">
+        <img src="${phil.image}" alt="Portrait of the Greek philosopher ${phil.name}" class="philosopher-image" width="200" height="250" loading="lazy">
         <p class="philosopher-teaching"><em>"${phil.teaching}"</em></p>
         <p class="philosopher-bio">${phil.bio}</p>
       `;
@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Quote Rotator
   const quotes = [
     `"Know thyself." — Temple of Apollo at Delphi`,
     `"The unexamined life is not worth living." — Socrates`,
@@ -135,6 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
       currentIndex = (currentIndex + 1) % quotes.length;
       quoteElement.textContent = quotes[currentIndex];
-    }, 5000); // every 5 seconds
+    }, 5000);
   }
 });
