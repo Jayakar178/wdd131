@@ -256,3 +256,24 @@ blockquote {
   margin-right: auto;
   box-shadow: 0 1px 8px rgba(0,0,0,0.1);
 }
+
+
+.start-btn {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-btn:hover,
+.start-btn:focus {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  outline: none;
+}
